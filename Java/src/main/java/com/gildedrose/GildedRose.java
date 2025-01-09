@@ -26,11 +26,11 @@ class GildedRose {
                     break;
                 case CONJURED:
                     item.sellIn--;
-                    updateConjuredQuality(item);
+                    item.quality = item.quality - 2;
                     break;
                 case AGED_BRIE:
                     item.sellIn--;
-                    updateAgedBrieQuality(item);
+                    item.quality++;
                     break;
                 case BACKSTAGE_PASSES:
                     item.sellIn--;
@@ -38,7 +38,7 @@ class GildedRose {
                     break;
                 default:
                     item.sellIn--;
-                    updateQuality(item);
+                    item.quality--;
             }
             setOverflowingQualityToMaxOrMin(item);
         }
@@ -56,14 +56,6 @@ class GildedRose {
         }
     }
 
-    private void updateAgedBrieQuality(Item item) {
-        item.quality++;
-    }
-
-    private void updateConjuredQuality(Item item) {
-        item.quality = item.quality - 2;
-    }
-
     private void updateBackstagePasseQuality(Item item) {
         if (item.sellIn < 0) {
             item.quality = 0;
@@ -74,10 +66,6 @@ class GildedRose {
         } else {
             item.quality++;
         }
-    }
-
-    private void updateQuality(Item item) {
-        item.quality--;
     }
 
 /*    public void updateQuality_old() {
