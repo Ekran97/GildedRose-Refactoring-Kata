@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GildedRoseTest {
 
@@ -13,6 +13,13 @@ class GildedRoseTest {
         app.updateQuality();
         assertEquals(4, items[0].sellIn);
         assertEquals(4, items[0].quality);
+    }
+
+    @Test
+    void item_null() {
+        Item[] items = new Item[] { null };
+        GildedRose app = new GildedRose(items);
+        assertDoesNotThrow(app::updateQuality);
     }
 
     @Test

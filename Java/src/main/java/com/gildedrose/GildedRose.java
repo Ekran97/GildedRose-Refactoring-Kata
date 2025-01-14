@@ -20,13 +20,14 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
+            if (item == null) continue;
             setOverflowingQualityToMaxOrMin(item);
             switch (item.name) {
                 case SULFURAS:
                     break;
                 case CONJURED:
                     item.sellIn--;
-                    item.quality = item.quality - 2;
+                    item.quality -= 2;
                     break;
                 case AGED_BRIE:
                     item.sellIn--;
