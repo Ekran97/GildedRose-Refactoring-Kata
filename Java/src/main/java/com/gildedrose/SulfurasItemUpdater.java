@@ -8,7 +8,6 @@ public class SulfurasItemUpdater extends ItemUpdater {
 
     @Override
     public void updateQuality() {
-        setOverflowingQualityToMaxOrMin();
     }
 
     @Override

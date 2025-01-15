@@ -8,7 +8,6 @@ public class BackstagePassItemUpdater extends ItemUpdater {
 
     @Override
     public void updateQuality() {
-        setOverflowingQualityToMaxOrMin();
         item.sellIn--;
         if (item.sellIn < 0) {
             item.quality = 0;
@@ -19,6 +18,5 @@ public class BackstagePassItemUpdater extends ItemUpdater {
         } else {
             item.quality++;
         }
-        setOverflowingQualityToMaxOrMin();
     }
 }

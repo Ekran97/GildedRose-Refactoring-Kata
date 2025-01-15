@@ -8,11 +8,15 @@ public class ItemUpdater {
         this.item = item;
     }
 
-     public void updateQuality(){
+    public void updateItem(){
         setOverflowingQualityToMaxOrMin();
+        updateQuality();
+        setOverflowingQualityToMaxOrMin();
+    }
+
+     protected void updateQuality(){
         item.sellIn--;
         item.quality--;
-        setOverflowingQualityToMaxOrMin();
     }
 
     public void setOverflowingQualityToMaxOrMin(){

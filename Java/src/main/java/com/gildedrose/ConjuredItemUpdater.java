@@ -8,9 +8,7 @@ public class ConjuredItemUpdater extends ItemUpdater {
 
     @Override
     public void updateQuality() {
-        setOverflowingQualityToMaxOrMin();
         item.sellIn--;
         item.quality -= 2;
-        setOverflowingQualityToMaxOrMin();
     }
 }

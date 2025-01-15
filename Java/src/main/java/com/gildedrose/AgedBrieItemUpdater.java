@@ -8,9 +8,7 @@ public class AgedBrieItemUpdater extends ItemUpdater {
 
     @Override
     public void updateQuality() {
-        setOverflowingQualityToMaxOrMin();
         item.sellIn--;
         item.quality++;
-        setOverflowingQualityToMaxOrMin();
     }
 }
